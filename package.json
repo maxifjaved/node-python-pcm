@@ -1,24 +1,15 @@
 {
-  "name": "maxifjaved-reco-script",
-  "version": "1.0.0",
-  "description": "NodeJS - called python script from node ",
-  "main": "index.js",
+  "name": "MicStreamToWav",
+  "version": "0.0.0",
+  "description": "Stream microphone pcm data to server and save on wav file.",
   "scripts": {
-    "test": "index"
+    "start": "node app.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/maxifjaved"
-  },
-  "keywords": [],
-  "author": "Muhammad Asif Javed",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/maxifjaved"
-  },
-  "homepage": "https://github.com/maxifjaved",
   "dependencies": {
-    "d3node-linechart": "^0.1.2",
-    "web-audio-api": "^0.2.2"
-  }
+    "binaryjs": "latest",
+    "express": "latest",
+    "jade": "latest",
+    "wav": "latest"
+  },
+  "author": "gabrielpoca"
 }
