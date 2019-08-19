@@ -63,7 +63,7 @@ io.on('connection', function (client) {
         if (recognizeStream !== null) {
             recognizeStream.write(data);
 
-            client.emit('pyBinaryData', data);
+            client.broadcast.emit('pyBinaryData', data);
         }
     });
 
