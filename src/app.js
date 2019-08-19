@@ -1,4 +1,6 @@
 'use strict'
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0"
+
 
 //  Google Cloud Speech Playground with node.js and socket.io
 //  Created by Vinzenz Aubry for sansho 24.01.17
@@ -16,8 +18,13 @@ const speechClient = new speech.SpeechClient(); // Creates a client
 
 const app = express();
 const port = process.env.PORT || 1337;
-const server = require('http').createServer(app);
 
+var options = {
+    key: fs.readFileSync('tls/server-key.pem'),
+    cert: fs.readFileSync('tls/server-cert.pem'),
+};
+
+const server = require('https').createServer(options, app);
 const io = require('socket.io')(server);
 
 app.use('/assets', express.static(__dirname + '/public'));
