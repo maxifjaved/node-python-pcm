@@ -62,6 +62,8 @@ io.on('connection', function (client) {
         // console.log(data); //log binary data
         if (recognizeStream !== null) {
             recognizeStream.write(data);
+
+            client.emit('pyBinaryData', data);
         }
     });
 
